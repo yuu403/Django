@@ -1,0 +1,9 @@
+id="k3a8ds"
+__pycache__/
+*.pyc
+db.sqlite3
+.env
+venv/
+.env.*
+media/
+staticfiles/
