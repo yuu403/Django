@@ -51,10 +51,10 @@ taskproject/
 │   ├── models.py
 │   ├── views.py
 │   ├── urls.py
-│   ├── templates/
 │
 ├── templates/
-│   ├── base.html
+│   ├── registration
+│   ├── tasks/
 │
 ├── manage.py
 ```
