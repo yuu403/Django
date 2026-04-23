@@ -1,0 +1,33 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}ホーム{% endblock %}
+
+{% block content %}
+
+<div class="text-center mt-5">
+    <h1 class="mb-4">タスク管理アプリ</h1>
+
+```
+{% if user.is_authenticated %}
+    <p class="lead">ようこそ {{ user.username }} さん</p>
+
+    <a href="{% url 'task_list' %}" class="btn btn-primary">
+        タスク一覧へ
+    </a>
+
+{% else %}
+    <p class="lead">ログインしてタスクを管理しよう</p>
+
+    <a href="{% url 'login' %}" class="btn btn-primary me-2">
+        ログイン
+    </a>
+
+    <a href="{% url 'signup' %}" class="btn btn-success">
+        新規登録
+    </a>
+{% endif %}
+```
+
+</div>
+
+{% endblock %}

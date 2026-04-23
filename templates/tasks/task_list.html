@@ -1,0 +1,33 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+
+<h2 class="mb-3">タスク一覧</h2>
+
+{% for task in object_list %}
+<div class="card mb-3">
+    <div class="card-body">
+
+        <h5 class="card-title">{{ task.title }}</h5>
+
+        <p class="card-text">
+            ステータス：
+            {% if task.status == 'todo' %}
+                <span class="badge bg-secondary">未着手</span>
+            {% elif task.status == 'doing' %}
+                <span class="badge bg-primary">進行中</span>
+            {% else %}
+                <span class="badge bg-success">完了</span>
+            {% endif %}
+        </p>
+
+        <a href="{% url 'task_update' task.id %}" class="btn btn-sm btn-warning">編集</a>
+        <a href="{% url 'task_delete' task.id %}" class="btn btn-sm btn-danger">削除</a>
+
+    </div>
+</div>
+{% empty %}
+<p>タスクがありません</p>
+{% endfor %}
+
+{% endblock %}
